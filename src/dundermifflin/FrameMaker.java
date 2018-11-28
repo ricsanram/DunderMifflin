@@ -49,6 +49,24 @@ public class FrameMaker {
         else
             JOptionPane.showMessageDialog(window, panel, "Dunder Mifflin Paper Company, Inc.", JOptionPane.PLAIN_MESSAGE);
     }
+    
+    public FrameMaker (StringBuilder message) {
+        JTextArea text = new JTextArea(message.toString());
+        JPanel panel = new JPanel();
+        text.setFont(new Font(Font.SANS_SERIF,Font.BOLD,28));
+        text.setPreferredSize(new Dimension(1000,500));
+        text.setLineWrap(true);
+        text.setWrapStyleWord(true);
+        text.setEditable(false);
+        text.setForeground(Color.LIGHT_GRAY);
+        text.setBackground(Color.DARK_GRAY);
+        text.setMargin(new Insets(20,20,20,20));
+        panel.add(text);
+        
+        JFrame window = new JFrame();
+        
+        JOptionPane.showMessageDialog(window, panel, "Dunder Mifflin Paper Company, Inc.", JOptionPane.PLAIN_MESSAGE);
+    }
 
     public String getUserInput() {
         return userInput;
