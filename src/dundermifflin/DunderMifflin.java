@@ -26,6 +26,9 @@ public class DunderMifflin {
         FrameMaker frame1 = new FrameMaker("dwightsalute.gif", "Welcome, what is your name?",true);
         FrameMaker frame2 = new FrameMaker("dwightcreepysmile.gif", "Hello, " + frame1.getUserInput() + "!",false);
         FrameMaker frame3 = new FrameMaker(output);
+        Company c = new Company();
+        c.printDepartmentList();
+        c.departments.get(0).printEmployeeList();
     }
     
 }
