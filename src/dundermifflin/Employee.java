@@ -14,11 +14,22 @@ public class Employee {
     //                Variables
     // *****************************************************
     private int employeeID;
-    private String name, birthday, job, address,ssNum;
-    private double salary;
+    private String name, birthday, job, address,ssNum,salary;
     // *****************************************************
     //                Getters and Setters
     // *****************************************************
+        
+    Employee(Integer id,  String name, String bday, String ss, String salary,  String address) // pass dept
+    {
+        employeeID = id;
+        this.name = name;
+        birthday = bday;
+        ssNum =  ss;
+        this.salary  = salary;
+        this. address = address;
+        //Dept_Name = dpt;
+        
+    }
     public void setEmployeeID(int employeeID)
     {
         this.employeeID = employeeID;
@@ -72,11 +83,11 @@ public class Employee {
         return this.address;
     }
     
-    public void setSalary(double salary){
+    public void setSalary(String salary){
         this.salary = salary;
     }
     
-    public double getSalary()
+    public String getSalary()
     {
         return this.salary;
     }
@@ -111,7 +122,7 @@ public class Employee {
         this.setEmployeeID(id);
         
         System.out.println("What is the employee's salary?: ");
-        double salary = input.nextDouble();
+        String salary = input.nextLine();
         this.setSalary(salary);
         
     }
@@ -135,11 +146,6 @@ public class Employee {
     
     
     
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Employee tmp = new Employee();
-        tmp.getEmployeeData();
-        tmp.OutputEmployee();
-    }
+
     
 }
