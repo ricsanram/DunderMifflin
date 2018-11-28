@@ -57,13 +57,13 @@ public class Department
        System.out.println("Enter Employee ID: ");
       emp_id = input.nextInt();
       Employee emp = map.get(emp_id);
-       System.out.println(emp.getEmployee_Name());
+       System.out.println(emp.getName());
    }
    
    void addEmployee(Integer id,  String name, String bday, String ss,  String salary,  String address)
    {
          Employee newEmp = new Employee(id, name, bday, ss, salary, address);
-         map.put(newEmp.getEmployee_ID(), newEmp);
+         map.put(newEmp.getEmployeeID(), newEmp);
    }
    
    void populateDept()

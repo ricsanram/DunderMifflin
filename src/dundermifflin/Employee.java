@@ -1,106 +1,145 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package dundermifflin;
-
-
-public class Employee 
-{
-    private Integer Employee_ID;
-    private String Employee_Name;
-    private String Employee_Bday;
-    private String Employee_SS;
-    private String Employee_Salary;
-    private String Employee_Address;
-    private Department Dept_Name;
-    
-    Employee(Integer id,  String name, String bday, String ss,  String salary,  String address) // pass dept
+import java.util.Scanner;
+/**
+ *
+ * @author jasonguevara
+ */
+public class Employee {
+    // *****************************************************
+    //                Variables
+    // *****************************************************
+    private int employeeID;
+    private String name, birthday, job, address,ssNum;
+    private double salary;
+    // *****************************************************
+    //                Getters and Setters
+    // *****************************************************
+    public void setEmployeeID(int employeeID)
     {
-        Employee_ID = id;
-        Employee_Name = name;
-        Employee_Bday = bday;
-        Employee_SS = ss;
-        Employee_Salary  = salary;
-         Employee_Address = address;
-        //Dept_Name = dpt;
+        this.employeeID = employeeID;
+    }
+    public int getEmployeeID()
+    {
+        return this.employeeID;
+    }
+    public void setSSNum(String ssNum)
+    {
+        this.ssNum = ssNum;
+    }
+    public String getSSNum()
+    {
+        return this.ssNum;
+    }
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getName()
+    {
+        return this.name;
+    }
+    
+    public void setBDay(String birthday){
+        this.birthday = birthday;
+    }
+    
+    public String getBDay()
+    {
+        return this.birthday;
+    }
+    
+    public void setJob(String job){
+        this.job = job;
+    }
+    
+    public String getJob()
+    {
+        return this.job;
+    }
+    
+    public void setAddress(String address){
+        this.address = address;
+    }
+    
+    public String getAddress()
+    {
+        return this.address;
+    }
+    
+    public void setSalary(double salary){
+        this.salary = salary;
+    }
+    
+    public double getSalary()
+    {
+        return this.salary;
+    }
+    // *****************************************************
+    //                Other Functions?
+    // *****************************************************
+    public void getEmployeeData()
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("What is the employee's name?: ");
+        String name = input.nextLine();
+        this.setName(name);
+        
+        System.out.println("What is the employee's Social Security Number?: ");
+        String SS = input.nextLine();
+        this.setSSNum(SS);
+        
+        System.out.println("What is the employee's birthday?: ");
+        String bday = input.nextLine();
+        this.setBDay(bday);
+        
+        System.out.println("What is the employee's Job?: ");
+        String job = input.nextLine();
+        this.setJob(job);
+        
+        System.out.println("What is the employee's address?: ");
+        String address = input.nextLine();
+        this.setAddress(address);
+                
+        System.out.println("What is the employee's ID number?: ");
+        int id = input.nextInt();
+        this.setEmployeeID(id);
+        
+        System.out.println("What is the employee's salary?: ");
+        double salary = input.nextDouble();
+        this.setSalary(salary);
         
     }
-   void add_Employee(Integer id, String name, String bday, String ss, String salary, String address)  //pass dept
-   {
-       setEmployee_ID(id);
-       setEmployee_Name(name);
-       setEmployee_Bday(bday);
-       setEmployee_SS(ss);
-       setEmployee_Salary(salary);
-       setEmployee_Address(address);
-       //setDept_Name(dpt);
-       
-   }
-   
-   @Override
-    public String toString()
-   {
-       return ("ID" + getEmployee_ID() + 
-                        "\nName: " + getEmployee_Name() + 
-                        "\nDOB: " + getEmployee_Bday() + 
-                        "\nSS#: " + getEmployee_SS() + 
-                        "\n$" + getEmployee_Salary() +
-                        "\nAddress: " + getEmployee_Address()
-                        );
-   }
-   
-   
-    public Integer getEmployee_ID() {
-        return Employee_ID;
+    
+    public void OutputEmployee()
+    {
+        System.out.println("**************************************************");
+        System.out.println("                     Employee Data                ");
+        System.out.println("**************************************************");
+        
+        System.out.printf("\nEmployee's Name        : %s" , getName());
+        System.out.printf("\nSocial Security Number : %s" , getSSNum());
+        System.out.printf("\nEmployee's Birthday    : %s" , getBDay());
+        System.out.printf("\nEmployee's Job         : %s" , getJob());
+        System.out.printf("\nEmployee's Address     : %s" , getAddress());
+        System.out.printf("\nEmployee's ID Number   : %-5d" , getEmployeeID());
+        System.out.printf("\nEmployee's Salary      : %.2f" , getSalary());
+        System.out.println();
     }
-
-    public void setEmployee_ID(Integer Employee_ID) {
-        this.Employee_ID = Employee_ID;
+    
+    
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Employee tmp = new Employee();
+        tmp.getEmployeeData();
+        tmp.OutputEmployee();
     }
-
-    public String getEmployee_Name() {
-        return Employee_Name;
-    }
-
-    public void setEmployee_Name(String Employee_Name) {
-        this.Employee_Name = Employee_Name;
-    }
-
-    public String getEmployee_Bday() {
-        return Employee_Bday;
-    }
-
-    public void setEmployee_Bday(String Employee_Bday) {
-        this.Employee_Bday = Employee_Bday;
-    }
-
-    public String getEmployee_SS() {
-        return Employee_SS;
-    }
-
-    public void setEmployee_SS(String Employee_SS) {
-        this.Employee_SS = Employee_SS;
-    }
-
-    public String getEmployee_Salary() {
-        return Employee_Salary;
-    }
-
-    public void setEmployee_Salary(String Employee_Salary) {
-        this.Employee_Salary = Employee_Salary;
-    }
-
-    public String getEmployee_Address() {
-        return Employee_Address;
-    }
-
-    public void setEmployee_Address(String Employee_Address) {
-        this.Employee_Address = Employee_Address;
-    }
-
-    public Department getDept_Name() {
-        return Dept_Name;
-    }
-
-    public void setDept_Name(Department Dept_Name) {
-        this.Dept_Name = Dept_Name;
-    }   
     
 }
