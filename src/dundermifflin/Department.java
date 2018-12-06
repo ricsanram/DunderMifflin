@@ -45,20 +45,7 @@ public class Department
        return ("ID: " + get_Department_ID() + "  " + get_Department_Description());
    }
    
-   void search_For_Employee()
-   {
-        Integer emp_id;
-       int dept_id;
-       
-        Scanner input = new Scanner(System.in);
-       System.out.println("Enter Dept:: ");
-       dept_id = input.nextInt();
- 
-       System.out.println("Enter Employee ID: ");
-      emp_id = input.nextInt();
-      Employee emp = map.get(emp_id);
-       System.out.println(emp.getName());
-   }
+
    
    void addEmployee(Integer id,  String name, String bday, String ss,  String salary,  String address)
    {
@@ -68,12 +55,12 @@ public class Department
    
    void populateDept()
    {
-       addEmployee(1, "Scott", "10/10/10" , "12-12-1232", "2123124", "908 Goodman St. Scranton, PA. 18512 " );
-       addEmployee(2, "Scott", "10/10/10" , "12-12-1232", "2123124", "110 E Main  St. Hummelstown, PA. 17036 " );
+       addEmployee(1, "Scoobert Doobert", "10/10/10" , "12-12-1232", "2123124", "908 Goodman St. Scranton, PA. 18512 " );
+       addEmployee(6, "Scott", "10/10/10" , "12-12-1232", "2123124", "110 E Main  St. Hummelstown, PA. 17036 " );
        addEmployee(3, "Scott", "10/10/10" , "12-12-1232", "2123124", "911 Hamilton Ave Farrell, PA. 16121 " );
        addEmployee(4, "Scott", "10/10/10" , "12-12-1232", "2123124", "910 Cedar Ave Scranton, PA. 18505 " );
        addEmployee(5, "Scott", "10/10/10" , "12-12-1232", "2123124", "1396 Hall Ave Sharon, PA. 16146 " );
-       addEmployee(6, "Scott", "10/10/10" , "12-12-1232", "2123124", "913 Eynon St. Scranton, PA. 18504" );
+       addEmployee(2, "Scott", "10/10/10" , "12-12-1232", "2123124", "913 Eynon St. Scranton, PA. 18504" );
        addEmployee(7, "Scott", "10/10/10" , "12-12-1232", "2123124", "" );
        addEmployee(8, "Scott", "10/10/10" , "12-12-1232", "2123124", "132413 asdfadfadf " );
        addEmployee(9, "Scott", "10/10/10" , "12-12-1232", "2123124", "132413 asdfadfadf " );
@@ -84,11 +71,14 @@ public class Department
    void printEmployeeList()
    {
        populateDept();
-      Set<Entry<Integer, Employee>> hashSet = map.entrySet();
-      for(Entry entry:  hashSet)
-      {
-          System.out.println("key="+ entry.getKey()+", Value= " + entry.getValue());
-      }
+       
+      //Set<Entry<Integer, Employee>> hashSet = map.entrySet();
+//      for(Entry entry:  hashSet)
+//      {
+//          System.out.println("key="+ entry.getKey()+", Value= " + entry.getValue());
+//      }
+
+        map.get(id).OutputEmployee();
    }
    
 }

@@ -136,10 +136,10 @@ public class Employee {
         System.out.printf("\nEmployee's Name        : %s" , getName());
         System.out.printf("\nSocial Security Number : %s" , getSSNum());
         System.out.printf("\nEmployee's Birthday    : %s" , getBDay());
-        System.out.printf("\nEmployee's Job         : %s" , getJob());
+      //  System.out.printf("\nEmployee's Job         : %s" , getJob());
         System.out.printf("\nEmployee's Address     : %s" , getAddress());
-        System.out.printf("\nEmployee's ID Number   : %-5d" , getEmployeeID());
-        System.out.printf("\nEmployee's Salary      : %.2f" , getSalary());
+        System.out.printf("\nEmployee's ID Number   :  %-5d" , getEmployeeID());
+        System.out.printf("\nEmployee's Salary      : %s" , getSalary());
         System.out.println();
     }
     
