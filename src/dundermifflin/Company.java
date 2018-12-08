@@ -81,7 +81,8 @@ public class Company
         for (int i = 0; i < departments.size(); i++)
         {
             System.out.println(departments.get(i).toString());
-            departments.get(i).printEmployeeList();
+            departments.get(i).getMap();
+            //departments.get(i).printEmployeeList();
             
         }
     }

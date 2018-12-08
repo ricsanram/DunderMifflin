@@ -10,7 +10,7 @@ public class Department
 {
     int id;
     String description;
-   HashMap<Integer, Employee>  map = new HashMap();
+   private HashMap<Integer, Employee>  map = new HashMap();
 
    Department(int id, String description)
    {
@@ -45,6 +45,14 @@ public class Department
        return ("ID: " + get_Department_ID() + "  " + get_Department_Description());
    }
    
+       public HashMap<Integer, Employee> getMap() {
+        return map;
+    }
+
+    public void setMap(HashMap<Integer, Employee> map) {
+        this.map = map;
+    }
+   
 
    
    void addEmployee(Integer id,  String name, String bday, String ss,  String salary,  String address, String job)
@@ -55,47 +63,47 @@ public class Department
           switch(newEmp.getJob())
           {
               case "Sales":
-                  map.put(newEmp.getEmployeeID(), newEmp);
+                  getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Corporate":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Manager":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Warehouse":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "HR":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Reception":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                           
                case "Accounting":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Customer Service":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Quality Assurance":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
                   
                case "Supply Relations":
-                   map.put(newEmp.getEmployeeID(), newEmp);
+                   getMap().put(newEmp.getEmployeeID(), newEmp);
                   break;
     
           }
-         map.put(newEmp.getEmployeeID(), newEmp);
+         getMap().put(newEmp.getEmployeeID(), newEmp);
    }
    
    void populateDept()
@@ -130,13 +138,17 @@ public class Department
    {
        populateDept();
        
-      //Set<Entry<Integer, Employee>> hashSet = map.entrySet();
+//      Set<Entry<Integer, Employee>> hashSet = map.entrySet();
 //      for(Entry entry:  hashSet)
-//      {
-//          System.out.println("key="+ entry.getKey()+", Value= " + entry.getValue());
-//      }
+//     {
+//         System.out.println("key="+ entry.getKey()+", Value= " + entry.getValue());
+//    }
 
-        map.get(id).OutputEmployee();
+   
+         getMap().get(id).OutputEmployee();
+        
    }
+
+
    
 }
