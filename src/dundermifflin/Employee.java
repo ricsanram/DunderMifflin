@@ -19,7 +19,7 @@ public class Employee {
     //                Getters and Setters
     // *****************************************************
         
-    Employee(Integer id,  String name, String bday, String ss, String salary,  String address) // pass dept
+    Employee(Integer id,  String name, String bday, String ss, String salary,  String address, String job) // pass dept
     {
         employeeID = id;
         this.name = name;
@@ -27,7 +27,7 @@ public class Employee {
         ssNum =  ss;
         this.salary  = salary;
         this. address = address;
-        //Dept_Name = dpt;
+        this.job = job;
         
     }
     public void setEmployeeID(int employeeID)
@@ -132,15 +132,14 @@ public class Employee {
         System.out.println("**************************************************");
         System.out.println("                     Employee Data                ");
         System.out.println("**************************************************");
-        
-        System.out.printf("\nEmployee's Name        : %s" , getName());
-        System.out.printf("\nSocial Security Number : %s" , getSSNum());
-        System.out.printf("\nEmployee's Birthday    : %s" , getBDay());
-      //  System.out.printf("\nEmployee's Job         : %s" , getJob());
-        System.out.printf("\nEmployee's Address     : %s" , getAddress());
-        System.out.printf("\nEmployee's ID Number   :  %-5d" , getEmployeeID());
-        System.out.printf("\nEmployee's Salary      : %s" , getSalary());
-        System.out.println();
+        System.out.printf("\n   Employee's ID Number   :  %-5d" , getEmployeeID());
+        System.out.printf("\n   Employee's Name        : %s" , getName());
+        System.out.printf("\n   Employee's Salary      : %s" , getSalary());
+        System.out.printf("\n   Social Security Number : %s" , getSSNum());
+        System.out.printf("\n   Employee's Birthday    : %s" , getBDay());
+        System.out.printf("\n   Employee's Address     : %s" , getAddress());
+      //  System.out.printf("\n Employee's Job         : %s" , getJob());
+        System.out.println("\n");
     }
     
     
