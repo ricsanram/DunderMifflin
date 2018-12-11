@@ -16,6 +16,8 @@ public class DunderMifflin {
      */
     public static void main(String[] args) {
         MakeItWork run = new MakeItWork();
+        System.out.println("FIN.");
+        System.exit(0);
     }
     
 }

@@ -132,7 +132,7 @@ public class Employee {
         System.out.println("**************************************************");
         System.out.println("                     Employee Data                ");
         System.out.println("**************************************************");
-        System.out.printf("\n   Employee's ID Number   :  %-5d" , getEmployeeID());
+        System.out.printf("\n   Employee's ID Number   : %-5d" , getEmployeeID());
         System.out.printf("\n   Employee's Name        : %s" , getName());
         System.out.printf("\n   Employee's Salary      : %s" , getSalary());
         System.out.printf("\n   Social Security Number : %s" , getSSNum());
