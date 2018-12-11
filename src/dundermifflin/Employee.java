@@ -127,19 +127,30 @@ public class Employee {
         
     }
     
-    public void OutputEmployee()
+    public StringBuilder OutputEmployee()
     {
-        System.out.println("**************************************************");
-        System.out.println("                     Employee Data                ");
-        System.out.println("**************************************************");
-        System.out.printf("\n   Employee's ID Number   : %-5d" , getEmployeeID());
-        System.out.printf("\n   Employee's Name        : %s" , getName());
-        System.out.printf("\n   Employee's Salary      : %s" , getSalary());
-        System.out.printf("\n   Social Security Number : %s" , getSSNum());
-        System.out.printf("\n   Employee's Birthday    : %s" , getBDay());
-        System.out.printf("\n   Employee's Address     : %s" , getAddress());
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\n**************************************************\n")
+        .append("                     Employee Data                \n")
+        .append("**************************************************\n")
+        .append("\nEmployee's ID Number   : " + getEmployeeID())
+        .append("\nEmployee's Name        : " + getName())
+        .append("\nEmployee's Salary      : " + getSalary())
+        .append("\nSocial Security Number : " + getSSNum())
+        .append("\nEmployee's Birthday    : " + getBDay())
+        .append("\nEmployee's Address     : " + getAddress());
       //  System.out.printf("\n Employee's Job         : %s" , getJob());
-        System.out.println("\n");
+//      sb.append("**************************************************")
+//        .append("                     Employee Data                ")
+//        .append("**************************************************")
+//        .append("\n   Employee's ID Number   : %-5d getEmployeeID())
+//        .append("\n   Employee's Name        : %s" , getName())
+//        .append("\n   Employee's Salary      : %s" , getSalary())
+//        .append("\n   Social Security Number : %s" , getSSNum())
+//        .append("\n   Employee's Birthday    : %s" , getBDay())
+//        .append("\n   Employee's Address     : %s" , getAddress());
+//        System.out.println("\n");
+        return sb;
     }
     
     

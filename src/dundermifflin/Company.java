@@ -26,27 +26,29 @@ public class Company
        
     }
     
-       void search_For_Dept()
-   {
+    StringBuilder search_For_Dept(Integer givenDep)
+    {
         Integer emp_id;
-       int dept_id;
-       int deptFnd= 0;
+        int dept_id;
+        int deptFnd= 0;
        
-        Scanner input = new Scanner(System.in);
-       System.out.println("Enter Dept ID:");
-       dept_id = input.nextInt();
+//        Scanner input = new Scanner(System.in);
+//       System.out.println("Enter Dept ID:");
+//       dept_id = input.nextInt();
        
-       BinarySearch bs = new BinarySearch();
-      deptFnd = bs.index(dept_id, departments);
+        BinarySearch bs = new BinarySearch();
+        deptFnd = bs.index(givenDep, departments);
       if (deptFnd == -1)
       {
-          System.out.println("Dept ID not found");
+          StringBuilder errorSB = new StringBuilder("Invalid Input");
+          return errorSB;
+          
       }
       else
       {
-      printDepartment(deptFnd);
+        return printDepartment(deptFnd);
       }
-      
+        
       
        /*
        System.out.println("Enter Employee ID: ");
@@ -54,7 +56,7 @@ public class Company
       Employee emp = map.get(emp_id);
        System.out.println(emp.getName());
     */
-   }
+    }
     
     void populateCompany()
     {
@@ -72,10 +74,16 @@ public class Company
     }
     
     
-    void printDepartment(int i)
+    StringBuilder printDepartment(int i)
     {
-           System.out.println(departments.get(i).toString());
-            departments.get(i).printEmployeeList();
+//           System.out.println(departments.get(i).toString());
+//            departments.get(i).printEmployeeList();
+            
+            StringBuilder sb = new StringBuilder(departments.get(i).toString())
+                    .append(departments.get(i).printEmployeeList())
+                    .append("\n\n\nPlease don't use this information.\n")
+                    .append("Identity theft is not a joke! Millions of families suffer every year!\n\n");
+            return sb;
     }
     
     void printDepartmentList()

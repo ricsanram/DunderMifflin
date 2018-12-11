@@ -10,6 +10,7 @@ public class Department
 {
     int id;
     String description;
+    Integer idCount = 24;
    private HashMap<Integer, Employee>  map = new HashMap();
 
    Department(int id, String description)
@@ -44,7 +45,10 @@ public class Department
    @Override
    public String toString()
    {
-       return ("ID: " + get_Department_ID() + "  " + get_Department_Description());
+        if (get_Department_ID() == 1)
+            return ("Welcome to the " + get_Department_Description() + " Team!\n---------------------------------------------\nGlad you joined the winning team led by me, Dwight Schrute!!!\n\nHere's the updated team's employee list:");
+        else
+            return ("Welcome to the " + get_Department_Description() + " Team!\n---------------------------------------------\nToo bad you didn't join the winning team...sales! Anyways.\n\nHere's the updated team's employee list:");
    }
    
        public HashMap<Integer, Employee> getMap() {
@@ -55,7 +59,12 @@ public class Department
         this.map = map;
     }
    
-
+    void addNewEmployee(String fullName, String birthday, String ssn, String salary, String address)
+    {
+        Employee newEmp = new Employee(idCount + 1, fullName, birthday, ssn, salary, address, "newbie");
+        idCount++;
+        getMap().put(newEmp.getEmployeeID(), newEmp);
+    }
    
    void addEmployee(Integer id,  String name, String bday, String ss,  String salary,  String address, String job)
    {
@@ -137,9 +146,9 @@ public class Department
         addEmployee(24 , "Dwight Schrute" , "July 20, 1963" , "011-64-XXXX" , "$82,000.00" , "1302 Kennedy Dr Uniontown, Pennsylvania(PA), 15401" , "Sales");
    }
    
-   void printEmployeeList()
+   StringBuilder printEmployeeList()
    {
-       
+       StringBuilder sb = new StringBuilder();
        
 //      Set<Entry<Integer, Employee>> hashSet = map.entrySet();
 //      for(Entry entry:  hashSet)
@@ -150,9 +159,9 @@ public class Department
    
         // 
        for (Map.Entry<Integer, Employee> entry : map.entrySet()) {
-    getMap().get(entry.getKey()).OutputEmployee();
+    sb.append(getMap().get(entry.getKey()).OutputEmployee());
 }
-        
+        return sb;
    }
 
 

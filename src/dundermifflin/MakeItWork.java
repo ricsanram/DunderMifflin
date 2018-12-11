@@ -96,7 +96,14 @@ public class MakeItWork
         salary = dwightSal.getUserInput();
         System.out.println(salary);
 //        Department is displayed with all employees
-//
+        Company dm = new Company();
+//      You are added to the employee list
+        dm.departments.get(dept-1).addNewEmployee(fullName, birthday, ssn, salary, address);
+//      Dept Employee list is shown
+        StringBuilder compEmpList = new StringBuilder();
+        compEmpList.append(dm.search_For_Dept(dept));
+        FrameMaker deptFrame = new FrameMaker(compEmpList);
+        FrameMaker dwightSalute = new FrameMaker("dwightsalute.gif","Welcome, "+ fullName +".\n\nI salute you!",false);
 //        Other characters pop in every now and then
 //        Ryan asks if you’re single
 //        Kelly if you like shopping
