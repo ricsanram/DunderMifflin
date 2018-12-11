@@ -69,7 +69,6 @@ public class FrameMaker {
         JTextArea text = new JTextArea(message.toString());
         JPanel panel = new JPanel();
         text.setFont(new Font(Font.MONOSPACED,Font.BOLD,19));
-        //text.setPreferredSize(new Dimension(1000,4000));
         text.setAutoscrolls(true);
         text.setLineWrap(true);
         text.setWrapStyleWord(true);

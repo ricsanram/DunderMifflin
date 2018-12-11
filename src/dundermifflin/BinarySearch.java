@@ -29,10 +29,10 @@ public class BinarySearch
                 returnValue = mid;
                 return mid;
             }
-         
         }
           return -1;
     }
+    
     public int index(int key, ArrayList<Department> deptArray)
     {
         return search(deptArray, key);

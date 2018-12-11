@@ -2,8 +2,6 @@ package dundermifflin;
 
 
 import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.Set;
 import java.util.*;
 
 public class Department 
@@ -68,52 +66,8 @@ public class Department
    
    void addEmployee(Integer id,  String name, String bday, String ss,  String salary,  String address, String job)
    {
-         Employee newEmp = new Employee(id, name, bday, ss, salary, address, job);
-         
-         //Idont think this switch is working. Still not sure how to add to department. I think i need a getter for the map?!
-//          switch(job)
-//          {
-//              case "Sales":
-//                  getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Corporate":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Manager":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Warehouse":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "HR":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Reception":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                          
-//               case "Accounting":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Customer Service":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Quality Assurance":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//                  
-//               case "Supply Relations":
-//                   getMap().put(newEmp.getEmployeeID(), newEmp);
-//                  break;
-//    
-//          }
+        Employee newEmp = new Employee(id, name, bday, ss, salary, address, job);
+
         if (job.equals(description))
             getMap().put(newEmp.getEmployeeID(), newEmp);
    }
@@ -148,18 +102,10 @@ public class Department
    
    StringBuilder printEmployeeList()
    {
-       StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
        
-//      Set<Entry<Integer, Employee>> hashSet = map.entrySet();
-//      for(Entry entry:  hashSet)
-//     {
-//         System.out.println("key="+ entry.getKey()+", Value= " + entry.getValue());
-//    }
-
-   
-        // 
-       for (Map.Entry<Integer, Employee> entry : map.entrySet()) {
-    sb.append(getMap().get(entry.getKey()).OutputEmployee());
+        for (Map.Entry<Integer, Employee> entry : map.entrySet()) {
+            sb.append(getMap().get(entry.getKey()).OutputEmployee());
 }
         return sb;
    }

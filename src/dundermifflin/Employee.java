@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package dundermifflin;
-import java.util.Scanner;
 /**
  *
  * @author jasonguevara
@@ -91,41 +90,6 @@ public class Employee {
     {
         return this.salary;
     }
-    // *****************************************************
-    //                Other Functions?
-    // *****************************************************
-    public void getEmployeeData()
-    {
-        Scanner input = new Scanner(System.in);
-        System.out.println("What is the employee's name?: ");
-        String name = input.nextLine();
-        this.setName(name);
-        
-        System.out.println("What is the employee's Social Security Number?: ");
-        String SS = input.nextLine();
-        this.setSSNum(SS);
-        
-        System.out.println("What is the employee's birthday?: ");
-        String bday = input.nextLine();
-        this.setBDay(bday);
-        
-        System.out.println("What is the employee's Job?: ");
-        String job = input.nextLine();
-        this.setJob(job);
-        
-        System.out.println("What is the employee's address?: ");
-        String address = input.nextLine();
-        this.setAddress(address);
-                
-        System.out.println("What is the employee's ID number?: ");
-        int id = input.nextInt();
-        this.setEmployeeID(id);
-        
-        System.out.println("What is the employee's salary?: ");
-        String salary = input.nextLine();
-        this.setSalary(salary);
-        
-    }
     
     public StringBuilder OutputEmployee()
     {
@@ -139,17 +103,7 @@ public class Employee {
         .append("\nSocial Security Number : " + getSSNum())
         .append("\nEmployee's Birthday    : " + getBDay())
         .append("\nEmployee's Address     : " + getAddress());
-      //  System.out.printf("\n Employee's Job         : %s" , getJob());
-//      sb.append("**************************************************")
-//        .append("                     Employee Data                ")
-//        .append("**************************************************")
-//        .append("\n   Employee's ID Number   : %-5d getEmployeeID())
-//        .append("\n   Employee's Name        : %s" , getName())
-//        .append("\n   Employee's Salary      : %s" , getSalary())
-//        .append("\n   Social Security Number : %s" , getSSNum())
-//        .append("\n   Employee's Birthday    : %s" , getBDay())
-//        .append("\n   Employee's Address     : %s" , getAddress());
-//        System.out.println("\n");
+
         return sb;
     }
     

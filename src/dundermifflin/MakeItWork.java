@@ -1,41 +1,14 @@
 package dundermifflin;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Controls the entire program!
  */
 
-/**
- *
- * @author rebecca
- */
 public class MakeItWork 
 {
    
     public MakeItWork()
     {
-//        StringBuilder output = new StringBuilder();
-//            output.append("       .-\"\"-. \n")
-//                  .append("      / _  _ \\\n")
-//                  .append("      |(_)(_)|\n")
-//                  .append("      (_ /\\ _)\n")
-//                  .append("       |wwww| \n")
-//                  .append("       \'-..-\' \n")
-//                  .append("/--------||--------\\");
-//        FrameMaker frame1 = new FrameMaker("dwightsalute.gif", "Welcome, what is your name?",true);
-//        FrameMaker frame2 = new FrameMaker("dwightcreepysmile.gif", "Hello, " + frame1.getUserInput() + "!",false);
-//        FrameMaker frame3 = new FrameMaker(output);
-        
-//        Company c = new Company();
-//        c.printDepartmentList();
-//        c.departments.get(0).printEmployeeList();
-//        c.search_For_Dept();
-//        c.search_For_Dept();
-//        c.search_For_Dept();
-//        c.search_For_Dept();
-        
-        
         //VARIABLES//
         String fullName;
         String birthday;
@@ -44,7 +17,6 @@ public class MakeItWork
         String salary;
         String deptString;
         Integer dept = 0;
-        
         
         //PROGRAM//
         FrameMaker welcome1 = new FrameMaker("dundermifflin.png");
@@ -55,12 +27,19 @@ public class MakeItWork
 //        Greeting from michael (greets with name)
         FrameMaker michaelHello = new FrameMaker("michaelbow.gif","Hello, " + fullName + "! I'm Michael Scott, Regional Manager. ", false);
         FrameMaker michaelJob = new FrameMaker("prison mike.png","So I heard you're interested in a job.\n\nI'll let Dwight, Assistant to the Regional Manager, take it from here.\n\n\"Dwight! We got a new employee!\"",false);
+//      Meridith
+        FrameMaker mer = new FrameMaker("meridithfreshmeat.gif");
+//        Stanley
+        FrameMaker stan = new FrameMaker("stanleydoesntcare.gif");
 //        Dwight does the filling out the paper work, enter birthday
         FrameMaker dwight = new FrameMaker("dwight.jpg","Good Morning, " + fullName + ".\n\nI'm Dwight Schrute, Assistant Regional Manager.\n\nLet's begin with some information we need. What is your birthday?\n(Month DD, YYYY)", true);
         birthday = dwight.getUserInput();
         System.out.println(birthday);
+//      jim invites to prank, and pam
+        FrameMaker jimasks = new FrameMaker("jimneedshelp.gif","Hi, sorry, want to help me out with a prank after you're done?\n\nDon't tell Pam. She ruins pranks.",false);
+        FrameMaker pam = new FrameMaker("pam.gif","Okay.\n\nI messed up ONCE.\nHe won't let it go.",false);
 //        Enter ssn
-        FrameMaker dwightSSN = new FrameMaker("dwightexcitedtime.gif", "Okay. What is your Social Security Number?\n(XXX-XX-XXXX)", true);
+        FrameMaker dwightSSN = new FrameMaker("dwightrolleye.gif", "Leave, Jim!\n\nAnyways, what is your Social Security Number?\n(XXX-XX-XXXX)", true);
         ssn = dwightSSN.getUserInput();
         System.out.println(ssn);
 //        Toby enters
@@ -98,12 +77,20 @@ public class MakeItWork
 //        Department is displayed with all employees
         Company dm = new Company();
 //      You are added to the employee list
-        dm.departments.get(dept-1).addNewEmployee(fullName, birthday, ssn, salary, address);
+        if (dept != 0)
+            dm.departments.get(dept-1).addNewEmployee(fullName, birthday, ssn, salary, address);
 //      Dept Employee list is shown
         StringBuilder compEmpList = new StringBuilder();
         compEmpList.append(dm.search_For_Dept(dept));
         FrameMaker deptFrame = new FrameMaker(compEmpList);
         FrameMaker dwightSalute = new FrameMaker("dwightsalute.gif","Welcome, "+ fullName +".\n\nI salute you!",false);
+//      Jim finally pranks
+        FrameMaker jimPrank = new FrameMaker("jimprank.gif","Jim: Thanks for helping with the prank!\n\n\"Merry Christmas!\"\n-Love, Jim.\n\n",false);
+        FrameMaker dwightScream = new FrameMaker("dwightscream.gif");
+        //Michael final
+        FrameMaker mikeBye = new FrameMaker("michaelregret.gif","It's not usually like this. You're going to love it here.\n\nWelcome to Dunder Mifflin!",false);
+        //FIN
+        FrameMaker fin = new FrameMaker("worldbestbossmug.png");
 //        Other characters pop in every now and then
 //        Ryan asks if you’re single
 //        Kelly if you like shopping
