@@ -60,16 +60,18 @@ public class Company
     {
          addDept(8, "Accounting");
          addDept(2, "Corporate");
-         addDept(5, "Customer Service:");
-         addDept(4, "Human Resouces:");
-         addDept(3, "Managment:");
+         addDept(5, "Customer Service");
+         addDept(4, "Human Resources");
+         addDept(3, "Management");
          addDept(6, "Quality Assurance");
-         addDept(10, "Reseptions:");
-         addDept(1, "Sales:");
+         addDept(10, "Reception");
+         addDept(1, "Sales");
          addDept(9, "Supply Relations");
          addDept(7, "Warehouse");
          
     }
+    
+    
     void printDepartment(int i)
     {
            System.out.println(departments.get(i).toString());
