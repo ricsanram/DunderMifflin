@@ -37,7 +37,7 @@ public class MakeItWork
         System.out.println(birthday);
 //      jim invites to prank, and pam
         FrameMaker jimasks = new FrameMaker("jimneedshelp.gif","Hi, sorry, want to help me out with a prank after you're done?\n\nDon't tell Pam. She ruins pranks.",false);
-        FrameMaker pam = new FrameMaker("pam.gif","Okay.\n\nI messed up ONCE.\nHe won't let it go.",false);
+        FrameMaker pam = new FrameMaker("pam.gif");
 //        Enter ssn
         FrameMaker dwightSSN = new FrameMaker("dwightrolleye.gif", "Leave, Jim!\n\nAnyways, what is your Social Security Number?\n(XXX-XX-XXXX)", true);
         ssn = dwightSSN.getUserInput();
@@ -50,9 +50,11 @@ public class MakeItWork
         FrameMaker dwightAdd = new FrameMaker("dwightmask.gif", "Sorry about Toby.\nSo inappropriate.\n\nAnyways, what is your address?", true);
         address = dwightAdd.getUserInput();
         System.out.println(address);
-//        FrameMaker = new FrameMaker("");
+//        Kelly threat
+        FrameMaker kell = new FrameMaker("kellywhatever.gif","Hi! I don't know who you are but you better stay away from Ryan!",false);
+        
 //        What department do you want to work in?
-        StringBuilder depts = new StringBuilder("Alright, so here are our departments:\n\n")
+        StringBuilder depts = new StringBuilder("Ignore Kelly.\n\nAlright, so here are our departments:\n\n")
             .append(" 1. Sales\n")
             .append(" 2. Corporate\n")
             .append(" 3. Management\n")
@@ -63,7 +65,7 @@ public class MakeItWork
             .append(" 8. Accounting\n")
             .append(" 9. Supply Relations\n")
             .append("10. Reception\n\n")
-            .append("Remember the number of the department where you'd like to work at!");    
+            .append("(Remember the number of the department you'd like to work at)");    
         FrameMaker dwightDeptList = new FrameMaker(depts);
         FrameMaker dwightDept = new FrameMaker("dwighttriumph.gif", "So what department do you want to work at?\n\nPick wisely.", true);
         deptString = dwightDept.getUserInput();
@@ -85,23 +87,13 @@ public class MakeItWork
         FrameMaker deptFrame = new FrameMaker(compEmpList);
         FrameMaker dwightSalute = new FrameMaker("dwightsalute.gif","Welcome, "+ fullName +".\n\nI salute you!",false);
 //      Jim finally pranks
-        FrameMaker jimPrank = new FrameMaker("jimprank.gif","Jim: Thanks for helping with the prank!\n\n\"Merry Christmas!\"\n-Love, Jim.\n\n",false);
+        FrameMaker jimJazz = new FrameMaker("jimjazz.gif","It's prank time.\n\nThanks for helping me!",false);
+        FrameMaker jimPrank = new FrameMaker("jimprank.gif","\"Merry Christmas, Dwight!\"\n-Love, Jim.\n\n",false);
         FrameMaker dwightScream = new FrameMaker("dwightscream.gif");
         //Michael final
         FrameMaker mikeBye = new FrameMaker("michaelregret.gif","It's not usually like this. You're going to love it here.\n\nWelcome to Dunder Mifflin!",false);
         //FIN
         FrameMaker fin = new FrameMaker("worldbestbossmug.png");
-//        Other characters pop in every now and then
-//        Ryan asks if you’re single
-//        Kelly if you like shopping
-//        Meridith about gift cards to steakhouse in trade of discounts
-//        Toby asking if he should be doing the hiring process but then being interrupted by michael
-//        Jim asks you to help with a prank on dwight (pam’s involved somehow)
-//        Creed is introduced
-//        Stanley
-//        Go back to michael calls a conference
-//        End with jim doing the prank you helped him with
-
     
     }
     
