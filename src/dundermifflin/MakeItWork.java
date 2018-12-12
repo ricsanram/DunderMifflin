@@ -26,7 +26,7 @@ public class MakeItWork
         System.out.println(fullName);
 //        Greeting from michael (greets with name)
         FrameMaker michaelHello = new FrameMaker("michaelbow.gif","Hello, " + fullName + "! I'm Michael Scott, Regional Manager. ", false);
-        FrameMaker michaelJob = new FrameMaker("prison mike.png","So I heard you're interested in a job.\n\nI'll let Dwight, Assistant to the Regional Manager, take it from here.\n\n\"Dwight! We got a new employee!\"",false);
+        FrameMaker michaelJob = new FrameMaker("prison mike.png","So I heard you're interested in a job.\nI'll let Dwight, Assistant to the Regional Manager, take it from here.\n\"Dwight! We got a new employee!\"",false);
 //      Meridith
         FrameMaker mer = new FrameMaker("meridithfreshmeat.gif");
 //        Stanley
